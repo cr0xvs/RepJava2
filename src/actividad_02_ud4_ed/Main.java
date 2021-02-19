@@ -3,23 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package actividad_02_ud4_ed;
-/*
-*@autor Cristóbal Gómez Piñero
-*/
+
+
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+/**
+ * 
+ * @author Cristóbal Gómez Piñero
+ */
 
 
 public class Main {
     static BufferedReader dato = new BufferedReader(new InputStreamReader(System.in));
     /**
-    * @param args the command line arguments
-    */
+     * 
+     * @param args this command line arguments
+     */
     public static void main(String[] args) {
         CCuenta cuenta1;
         double saldoActual;
@@ -29,7 +35,7 @@ public class Main {
             try {
                 System.out.println("MENÚ DE OPERACIONES");
                 System.out.println("-------------------");
-                  System.out.println("1 - Ingresar");
+                System.out.println("1 - Ingresar");
                 System.out.println("2 - Retirar");
                 System.out.println("3 - Finalizar");
                 opcion=Integer.parseInt(dato.readLine());
@@ -37,10 +43,14 @@ public class Main {
                     System.out.println("¿Cuánto desea ingresar?: ");
                     float ingresar=Integer.parseInt(dato.readLine());
                     operativa_cuenta(cuenta1,ingresar,opcion);
+                    saldoActual = cuenta1.estado();
+                    System.out.println("El saldo actual es "+ saldoActual );
                 }else if(opcion==2){
                     System.out.println("¿Cuánto desea retirar?: ");
                     float retirar=Integer.parseInt(dato.readLine());
                     operativa_cuenta(cuenta1,retirar,opcion);
+                    saldoActual = cuenta1.estado();
+                    System.out.println("El saldo actual es "+ saldoActual );
                 }else if(opcion==3){
                     System.out.println("Finalizamos la ejecución");
                 }else{
